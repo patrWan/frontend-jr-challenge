@@ -5,7 +5,6 @@ import Toast from "components/Toast";
 import { toggleCheckTodo, deleteTodo } from "features/todos";
 
 import { useDispatch, useSelector } from "react-redux";
-import "./styles.css";
 
 const TodoList = () => {
   const dispatch = useDispatch();
@@ -25,8 +24,8 @@ const TodoList = () => {
   return (
     <div className="p-5">
       <Toast/>
-      <span className="todo-list-title">Things to do:</span>
-      <div className="todo-list-content">
+      <span className="font-bold text-center block py-3 mb-3 border-b-2 uppercase text-lg">Things to do:</span>
+      <div className="flex flex-col">
         {/* Fix an ability to render todos */}
         {
           todos.map(todo => (
@@ -40,7 +39,7 @@ const TodoList = () => {
           ))
         }
       </div>
-      <div className="no-todos">
+      <div className="py-3 text-sm text-gray-400 text-center">
         {todos.length !== 0?  "" : "Looks like you are absolutely free today!"}
       </div>
     </div>

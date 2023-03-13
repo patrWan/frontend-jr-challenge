@@ -37,12 +37,13 @@ export const deleteTodo = createAsyncThunk('todo/deleteTodo', async (todoId, { r
 }
 )
 
-export const addTodo = createAsyncThunk('todo/addTodo', async (todo, { getState, rejectWithValue }) => {
-    const state = getState();
+export const addTodo = createAsyncThunk('todo/addTodo', async (todo, {rejectWithValue }) => {
+    
     const newTodo = {
         id : Math.floor(Math.random() * Date.now()),
         label : todo,
         checked : false,
+        priority : 'normal',
     }
     console.log(newTodo)
     return axios.post(`${baseURL}`,

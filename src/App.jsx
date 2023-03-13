@@ -3,8 +3,6 @@ import TodoList from "./components/TodoList";
 import TodoResults from "./components/TodoResults";
 import TodoForm from "components/TodoForm";
 
-import "./App.css";
-
 import { fetchTodosAsync } from "features/todos";
 
 import { useDispatch } from "react-redux";
@@ -15,7 +13,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchTodosAsync());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="max-w-2xl m-auto">
